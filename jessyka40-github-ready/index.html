@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#d7c0a1">
+  <meta name="description" content="Le site souvenir des 40 ans de Jessyka — 12 septembre 2026 au Domaine K.">
+  <title>Jessyka • 40 ans • 12.09.2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero-photo { position:absolute; inset:0; z-index:-1; overflow:hidden; }
+    .hero-photo img { width:100%; height:100%; object-fit:cover; object-position:center 35%; filter:saturate(.88) contrast(.94); opacity:.62; }
+    .hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(38,28,20,.28),rgba(38,28,20,.52)); z-index:-1; }
+    .hero-inner { position:relative; z-index:2; }
+    .gallery-note { max-width:720px; margin:-18px auto 34px; text-align:center; opacity:.78; }
+    .masonry figure { cursor:pointer; }
+    .masonry figure img { transition:transform .45s ease, filter .45s ease; }
+    .masonry figure:hover img { transform:scale(1.025); filter:saturate(1.04); }
+    .lightbox { position:fixed; inset:0; display:none; place-items:center; background:rgba(24,18,13,.9); z-index:1000; padding:22px; }
+    .lightbox.open { display:grid; }
+    .lightbox img { max-width:min(94vw,1200px); max-height:88vh; object-fit:contain; border-radius:10px; box-shadow:0 20px 70px rgba(0,0,0,.45); }
+    .lightbox button { position:absolute; top:18px; right:18px; width:44px; height:44px; border:0; border-radius:50%; background:rgba(255,255,255,.92); font-size:24px; cursor:pointer; }
+    .lightbox figcaption { position:absolute; bottom:18px; left:50%; transform:translateX(-50%); color:#fff; text-align:center; font-size:14px; }
+    .memory-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:30px 0 0; }
+    .memory-strip img { width:100%; aspect-ratio:1.2; object-fit:cover; border-radius:12px; }
+    @media(max-width:720px) { .memory-strip { grid-template-columns:repeat(2,1fr); } }
+  </style>
+</head>
+<body>
+  <div class="fabric"></div>
+  <header class="hero" id="accueil">
+    <div class="hero-photo"><img src="photos/jessyka-01.jpg" alt="Jessyka en plein air"></div>
+    <nav class="nav">
+      <a class="brand" href="#accueil">J<span>♥</span></a>
+      <div class="navlinks">
+        <a href="#histoire">Histoire</a><a href="#galerie">Galerie</a><a href="#jeux">Jeux</a>
+        <a href="#livre-or">Livre d'or</a><a href="#infos">Infos</a>
+      </div>
+    </nav>
+    <div class="hero-inner">
+      <div class="countdown-label">Le compte à rebours est lancé ✦</div>
+      <div class="countdown" aria-label="Compte à rebours">
+        <div><strong id="days">--</strong><span>jours</span></div>
+        <div><strong id="hours">--</strong><span>heures</span></div>
+        <div><strong id="minutes">--</strong><span>minutes</span></div>
+        <div><strong id="seconds">--</strong><span>secondes</span></div>
+      </div>
+
+      <div class="quick-access">
+        <div class="quick-access-copy">
+          <span class="access-icon">📍</span>
+          <div>
+            <p class="eyebrow">ACCÈS À LA SOIRÉE</p>
+            <h2>Le Domaine K</h2>
+            <p>Samedi 12 septembre 2026 · à partir de 19h15</p>
+          </div>
+        </div>
+        <a class="button map-button" target="_blank" rel="noopener" href="https://maps.app.goo.gl/fP99RdCGWWpy4DzUA">Ouvrir Google Maps ↗</a>
+      </div>
+
+      <p class="eyebrow hero-eyebrow">UNE BELLE HISTOIRE À CÉLÉBRER</p>
+      <h1>Jessyka<br><em>40 ans</em></h1>
+      <p class="hero-date">12 septembre 2026 · 19h15</p>
+      <p class="hero-place">Une soirée bohème, chaleureuse et pleine de souvenirs</p>
+      <a class="button" href="#galerie">Découvrir les souvenirs ↓</a>
+    </div>
+    <div class="wave"></div>
+  </header>
+
+  <section class="boho-strip" aria-label="Ambiance bohème">
+    <div><img src="photos/boheme-lumieres.jpg" alt="Ambiance bohème végétale et lumineuse"></div>
+    <div><img src="photos/boheme-table.jpg" alt="Décoration de table bohème avec fleurs et bougies"></div>
+    <div><img src="photos/boheme-decor.jpg" alt="Suspensions en rotin et décoration chaleureuse"></div>
+    <div><img src="photos/boheme-lavande.jpg" alt="Paysage et ambiance bohème aux tons naturels"></div>
+  </section>
+
+  <main>
+    <section class="intro section">
+      <div class="polaroid tilt-left"><img src="photos/jessyka-02.jpg" alt="Jessyka avec son entourage"></div>
+      <div class="intro-copy">
+        <p class="eyebrow">12 · 09 · 2026</p>
+        <h2>40 bougies,<br><em>mille souvenirs.</em></h2>
+        <p>Bienvenue dans le petit coin d'internet imaginé pour célébrer Jessyka : des sourires, de la famille, des amis, des aventures et 22 photos choisies pour raconter un petit bout de son histoire.</p>
+        <p class="signature">Avec beaucoup d'amour ✦</p>
+      </div>
+    </section>
+
+    <section class="section story" id="histoire">
+      <div class="section-heading">
+        <p class="eyebrow">LE FIL DES SOUVENIRS</p>
+        <h2>Quelques chapitres<br><em>de Jessyka</em></h2>
+      </div>
+      <div class="timeline">
+        <article><span>01</span><div><h3>Les copines</h3><p>Des sourires complices, des repas, des discussions et ces moments simples qui deviennent de grands souvenirs.</p></div><img src="photos/jessyka-03.jpg" alt="Jessyka avec une amie"></article>
+        <article><span>02</span><div><h3>L'aventurière</h3><p>Cheval, spéléologie, grands espaces… Jessyka n'a visiblement jamais dit non à une nouvelle aventure.</p></div><img src="photos/jessyka-04.jpg" alt="Jessyka lors d'une activité"></article>
+        <article><span>03</span><div><h3>La tribu</h3><p>Parce que les plus beaux souvenirs sont souvent ceux partagés avec les enfants, la famille et les proches.</p></div><img src="photos/jessyka-05.jpg" alt="Jessyka avec un enfant"></article>
+        <article><span>04</span><div><h3>40 ans aujourd'hui</h3><p>Et toujours ce même sourire : profiter, rire, aimer et créer encore beaucoup de souvenirs.</p></div><img src="photos/jessyka-06.jpg" alt="Jessyka souriante"></article>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div class="quote">« La vie est faite de petits moments qui deviennent de grandes histoires. »</div>
+    </section>
+
+    <section class="section gallery" id="galerie">
+      <div class="section-heading">
+        <p class="eyebrow">22 SOUVENIRS</p>
+        <h2>Jessyka, en <em>images</em></h2>
+      </div>
+      <p class="gallery-note">Touchez une photo pour l'ouvrir en grand ✦</p>
+      <div class="masonry">
+        <figure class="wide"><img src="photos/jessyka-01.jpg" alt="Jessyka en plein air"><figcaption>Un sourire, toujours.</figcaption></figure>
+        <figure><img src="photos/jessyka-02.jpg" alt="Jessyka avec son entourage"><figcaption>Les beaux moments.</figcaption></figure>
+        <figure class="tall"><img src="photos/jessyka-03.jpg" alt="Jessyka avec une amie"><figcaption>Complicité.</figcaption></figure>
+        <figure><img src="photos/jessyka-04.jpg" alt="Jessyka lors d'une activité"><figcaption>Toujours partante.</figcaption></figure>
+        <figure class="wide"><img src="photos/jessyka-05.jpg" alt="Jessyka avec un enfant"><figcaption>Les petits bonheurs.</figcaption></figure>
+        <figure><img src="photos/jessyka-06.jpg" alt="Jessyka avec un enfant"><figcaption>Maman, tout simplement.</figcaption></figure>
+        <figure class="tall"><img src="photos/jessyka-07.jpg" alt="Jessyka avec des proches"><figcaption>La famille.</figcaption></figure>
+        <figure><img src="photos/jessyka-08.jpg" alt="Jessyka dans un moment convivial"><figcaption>Les souvenirs partagés.</figcaption></figure>
+        <figure class="wide"><img src="photos/jessyka-09.jpg" alt="Jessyka en extérieur"><figcaption>Dehors, au soleil.</figcaption></figure>
+        <figure><img src="photos/jessyka-10.jpg" alt="Jessyka en famille"><figcaption>Entourée des siens.</figcaption></figure>
+        <figure><img src="photos/jessyka-11.jpg" alt="Jessyka souriante"><figcaption>Encore un joli sourire.</figcaption></figure>
+        <figure class="wide"><img src="photos/jessyka-12.jpg" alt="Jessyka avec ses proches"><figcaption>Et la suite reste à écrire…</figcaption></figure>
+        <figure class="tall"><img src="photos/jessyka-13.jpeg" alt="Jessyka avec un bébé dans les bras"><figcaption>Un tendre souvenir.</figcaption></figure>
+        <figure><img src="photos/jessyka-14.jpeg" alt="Jessyka avec une proche"><figcaption>Complicité.</figcaption></figure>
+        <figure class="wide"><img src="photos/jessyka-15.jpeg" alt="Jessyka sur un pont"><figcaption>En balade.</figcaption></figure>
+        <figure><img src="photos/jessyka-16.jpeg" alt="Jessyka à la fête foraine"><figcaption>Gourmande et joyeuse.</figcaption></figure>
+        <figure class="tall"><img src="photos/jessyka-17.jpeg" alt="Jessyka sur une trottinette électrique"><figcaption>Toujours partante !</figcaption></figure>
+        <figure class="wide"><img src="photos/jessyka-18.jpeg" alt="Jessyka avec ses proches au bord de la mer"><figcaption>Les escapades.</figcaption></figure>
+        <figure><img src="photos/jessyka-19.jpeg" alt="Jessyka dans un moment convivial"><figcaption>À la bonne humeur.</figcaption></figure>
+        <figure class="wide"><img src="photos/jessyka-20.jpeg" alt="Jessyka avec sa famille"><figcaption>Les moments en famille.</figcaption></figure>
+        <figure><img src="photos/jessyka-21.jpeg" alt="Jessyka avec une amie en extérieur"><figcaption>Les copines.</figcaption></figure>
+        <figure class="tall"><img src="photos/jessyka-22.jpeg" alt="Jessyka à la fête foraine"><figcaption>Encore une aventure.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">PETIT ALBUM DE FAMILLE</p>
+        <h2>Les détails qui<br><em>font les souvenirs</em></h2>
+      </div>
+      <div class="memory-strip">
+        <img src="photos/jessyka-07.jpg" alt="Souvenir de famille">
+        <img src="photos/jessyka-08.jpg" alt="Souvenir convivial">
+        <img src="photos/jessyka-09.jpg" alt="Souvenir en extérieur">
+        <img src="photos/jessyka-12.jpg" alt="Souvenir avec ses proches">
+      </div>
+    </section>
+
+    <section class="section games" id="jeux">
+      <div class="section-heading">
+        <p class="eyebrow">À VOUS DE JOUER</p>
+        <h2>Le grand quiz<br><em>« Qui connaît Jessyka ? »</em></h2>
+      </div>
+      <div id="quiz" class="quiz-card">
+        <div class="quiz-top"><span id="quiz-progress">Question 1 / 5</span><span id="score">0 point</span></div>
+        <h3 id="question"></h3>
+        <div id="answers" class="answers"></div>
+        <button id="next" class="button" hidden>Question suivante →</button>
+        <div id="quiz-result" hidden></div>
+      </div>
+      <p class="game-note">Les questions sont faciles à modifier dans <code>script.js</code> pour y mettre vos vraies anecdotes.</p>
+    </section>
+
+    <section class="section wishes" id="livre-or">
+      <div class="section-heading">
+        <p class="eyebrow">UN PETIT MOT POUR ELLE</p>
+        <h2>Le livre d'or<br><em>des 40 ans</em></h2>
+        <p>Laissez une trace, une anecdote ou simplement un « Joyeux anniversaire ! ».</p>
+      </div>
+      <div class="guestbook">
+        <form id="guestbook-form">
+          <input id="guest-name" maxlength="40" placeholder="Votre prénom / surnom" required>
+          <textarea id="guest-message" maxlength="500" rows="4" placeholder="Votre message pour Jessyka…" required></textarea>
+          <button class="button" type="submit">Déposer mon message ✦</button>
+          <small id="form-status"></small>
+        </form>
+        <div id="messages" class="messages">
+          <article class="message"><b>Les amis</b><span>12/09/2026</span><p>À tes 40 ans, à nos fous rires et à la suite ! 🥂</p></article>
+          <article class="message"><b>La team</b><span>12/09/2026</span><p>Ne change rien. Enfin… sauf peut-être tes 40 bougies, elles prennent de la place ! 😄</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section music">
+      <div class="music-card">
+        <div>
+          <p class="eyebrow">LA PLAYLIST DE JESSYKA</p>
+          <h2>Une chanson à faire jouer ?</h2>
+          <p>Proposez un titre qui doit absolument passer pendant la soirée.</p>
+        </div>
+        <form id="music-form">
+          <input id="music-name" maxlength="40" placeholder="Votre prénom" required>
+          <input id="music-title" maxlength="120" placeholder="Artiste — titre" required>
+          <button class="button" type="submit">Ajouter 🎵</button>
+        </form>
+        <div id="music-list"></div>
+      </div>
+    </section>
+
+    <section class="section infos" id="infos">
+      <div class="section-heading">
+        <p class="eyebrow">LE GRAND RENDEZ-VOUS</p>
+        <h2>On se retrouve<br><em>au Domaine K</em></h2>
+      </div>
+      <div class="info-grid">
+        <div class="info-card"><span>📅</span><b>Samedi 12 septembre 2026</b><small>À partir de 19h15</small></div>
+        <div class="info-card"><span>📍</span><b>Le Domaine K</b><small>44.248674, 4.220028</small></div>
+        <div class="info-card"><span>👗</span><b>Ambiance</b><small>Bohème · sable · voiles blanches</small></div>
+      </div>
+      <div class="map-card">
+        <div class="map-decoration">✦</div>
+        <h3>Besoin de l'itinéraire ?</h3>
+        <p>Le lieu est déjà prêt dans Google Maps.</p>
+        <a class="button" target="_blank" rel="noopener" href="https://maps.app.goo.gl/fP99RdCGWWpy4DzUA">Ouvrir l'itinéraire ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-mark">J<span>♥</span></div>
+    <p>Jessyka · 40 ans · 12 septembre 2026</p>
+    <small>Fait avec beaucoup d'amour, quelques souvenirs et une bonne dose de sable.</small>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" id="lightbox-close" aria-label="Fermer">×</button>
+    <img id="lightbox-image" src="" alt="">
+    <figcaption id="lightbox-caption"></figcaption>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-image');
+    const lbCap = document.getElementById('lightbox-caption');
+    document.querySelectorAll('.masonry figure').forEach(fig => {
+      fig.addEventListener('click', () => {
+        const img = fig.querySelector('img');
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCap.textContent = fig.querySelector('figcaption')?.textContent || '';
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden','false');
+      });
+    });
+    function closeLightbox(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; }
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    lb.addEventListener('click', e => { if(e.target === lb) closeLightbox(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>
